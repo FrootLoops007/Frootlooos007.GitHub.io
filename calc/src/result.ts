@@ -91,7 +91,6 @@ export function damageRange(
   // Standard Damage
   if (damage.length > 2) {
     const d = damage as number[];
-    if (d[0] > d[d.length - 1]) return [Math.min(...d), Math.max(...d)];
-    return [d[0], d[d.length - 1]];
+    return [d[8], d[8]];
   }
 }
