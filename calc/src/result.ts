@@ -94,13 +94,4 @@ export function damageRange(
     if (d[0] > d[d.length - 1]) return [Math.min(...d), Math.max(...d)];
     return [d[0], d[d.length - 1]];
   }
-  // Fixed Parental Bond Damage
-  if (typeof damage[0] === 'number' && typeof damage[1] === 'number') {
-    return [[damage[0], damage[1]], [damage[0], damage[1]]];
-  }
-  // Parental Bond Damage
-  const d = damage as [number[], number[]];
-  if (d[0][0] > d[0][d[0].length - 1]) d[0] = d[0].slice().sort();
-  if (d[1][0] > d[1][d[1].length - 1]) d[1] = d[1].slice().sort();
-  return [[d[0][0], d[1][0]], [d[0][d[0].length - 1], d[1][d[1].length - 1]]];
 }
